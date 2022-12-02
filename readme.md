@@ -6,8 +6,9 @@ All print statements are placed in individual functions inside
 print_functions file, and all command functions are created
 and moved to command_functions.py. 
 
-Test functions are created in test_functions.py
-but they all fail.
+Test functions for print_separation_line(), 
+test_extract_msg_file_content(), and 
+test_lock_depth_positive_check() and they all pass.
 
 All modules and functions have docstrings.
 
