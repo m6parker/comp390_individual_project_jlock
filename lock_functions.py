@@ -10,7 +10,8 @@ from math_functions import modinv
 
 def lock(message, lock_file_name):
     """this function creates a dictionary and uses it to encrypt a given message and create a text
-    file and put the encoded contents in the file. """
+    file with a randomly generated name, and put the encoded contents in the file using the
+    specified lock depth in the arguments given. """
 
     # Declare and Initialize key file dictionary
     key_dict = {

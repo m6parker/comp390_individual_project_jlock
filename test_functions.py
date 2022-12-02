@@ -9,7 +9,8 @@ from print_functions import *
 
 
 def test_print_separation_line(capfd):
-    """this function tests the line that prints across the screen, making sure it is the correct length"""
+    """this function tests the line that prints across the screen that keeps everything organized.
+    It tests it using different lengths (2, 0, 10, -1) and once without the line character """
     # Include at least six test cases in this function.
     # Five of the test cases should pass the following sets of parameters to
     # ‘print_separation_line()’ and verify the terminal (stdout) output:
@@ -35,14 +36,10 @@ def test_print_separation_line(capfd):
 
 
 def test_extract_msg_file_content(capfd):
-    """this function makes sure that the file is accessing the proper contents of the correct text files"""
-    # filename = 'test.txt'
-    # with TempDirectory() as tempDir:
-    # declare a temp filename (‘test.txt’)
-    # write a test message to ‘test.txt’ using tempDir.write(temp_filename,
-    # < message_string >)
-    # construct the file path: tempDir.path + '\\' + temp_filename
-    # call extract_msg_file_content(file_path)
+    """this function makes sure that the file is accessing the proper contents of the correct text files.
+    a test file is created with a test message and the file path is created from that. then the function
+    extract_msg_file_contents is called using the test file name and the output is shown."""
+
     with TempDirectory() as tempDir:
         temp_filename = 'test.txt'
         test_message = b'test123'
@@ -59,7 +56,8 @@ def test_extract_msg_file_content(capfd):
 
 
 def test_lock_depth_positive_check(capfd):
-    """this function tests that the function that checks in the lock depth argument is valid"""
+    """this function tests that the lock_depth_positive_check() function is valid by using an integer, a negative
+    number, and zero. the error message is shown for those that were not an int greater than zero."""
     depth = 0
     arg_val = '0'
     assert util_funcs.lock_depth_positive_check(depth, arg_val) is None

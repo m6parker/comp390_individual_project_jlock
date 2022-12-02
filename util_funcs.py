@@ -12,7 +12,8 @@ import print_functions
 
 def generate_lock_file(size):
     """this function calls another function to create a unique random name for the text file
-    and calls another function to put the code content into that file. """
+    and calls another function to put the code content into that file, it handles an errors that
+     may be caused by trying to add the contents to the newly generated file. """
 
     lock_file_name = generate_unique_lock_file_name()
     try:

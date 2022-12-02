@@ -12,8 +12,7 @@ from unlock_functions import unlock
 
 def help_command():
     """ Call all the command help print functions. Separate the print calls with a call to
-    print_separation_line(). Also call print_separation_line() as the first call and last call in
-    this function."""
+    print_separation_line() so they are divided nicely by a line. """
     print_functions.print_separation_line('=', 50)
     print_functions.print_help_welcome()
     print_functions.print_separation_line('=', 50)
@@ -44,7 +43,8 @@ def msg_command():
 
 def locked_command():
     """this function prints out what encrypted text files there currently are that are not
-    unlocked yet. It will tell you the txt file name and the encrypted code. """
+    unlocked yet. It will tell you the txt file name and the encrypted code, but will not reveal the
+    message. """
 
     encrypted_file_list = [file for file in os.listdir() if file.endswith('_encrypted_msg.txt')]
     if len(encrypted_file_list) == 0:
@@ -60,7 +60,7 @@ def locked_command():
 
 def clear_command():
     """this function removes all encrypted and decrypted files from the program,
-    erasing everything and starting over, displaying a message. """
+    erasing everything and starting over, displaying a message when it is done. """
 
     lock_file_list = [file for file in os.listdir() if file.endswith('_lock.txt')]
     key_file_list = [file for file in os.listdir() if file.endswith('_key.txt')]

@@ -3,7 +3,8 @@
 
 # https://rosettacode.org/wiki/Modular_inverse#Python
 def extended_gcd(aa, bb):
-    """this function uses a while loop to encode the data. """
+    """this function uses a while loop to create the encryption. The divmod()
+    method takes two numbers as arguments and returns their quotient and remainder in a tuple."""
     lastremainder, remainder = abs(aa), abs(bb)
     x, lastx, y, lasty = 0, 1, 1, 0
     while remainder:
@@ -15,7 +16,8 @@ def extended_gcd(aa, bb):
 
 # https://rosettacode.org/wiki/Modular_inverse#Python
 def modinv(a, m):
-    """this function checks if g is 1, if it is, return x mod m, if not, raise an error"""
+    """this function passes the vaiables to the extended_gcd() funciton and
+    checks if g is 1, if it is, return x mod m, if not, raise an error"""
     g, x, y = extended_gcd(a, m)
     if g != 1:
         raise ValueError
